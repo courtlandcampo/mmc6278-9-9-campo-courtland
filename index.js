@@ -27,7 +27,7 @@ form.onsubmit = function(e){
     input.value = ""
 }
 
-function weatherResult(weatherObject) {
+const weatherResult = (weatherObject) => {
     weather.innerHTML = ""
 
     const br = document.createElement('br')
