@@ -9,7 +9,7 @@ form.onsubmit = async (e) => {
     e.preventDefault()
     const userInput = input.value
     
-    fetch(`https://api.openweathermap.org/data/2.5/weather?&units=imperial&appid=5e8fb7436a0e6f1c8b62aad1d8797764&q='${userInput}`)
+    await fetch(`https://api.openweathermap.org/data/2.5/weather?&units=imperial&appid=5e8fb7436a0e6f1c8b62aad1d8797764&q='${userInput}`)
     
     .then(function(j) {
         return j.json()
