@@ -1,12 +1,11 @@
 const form = document.querySelector('form')
 const input = document.querySelector('input')
 const weather = document.querySelector('#weather')
-
 //weather error message
 const notFound = document.createElement("h2")
 notFound.textContent = "Location not found"
 
-form.onsubmit = function(e){
+form.onsubmit = async (e) => {
     e.preventDefault()
     const userInput = input.value
     
@@ -52,7 +51,6 @@ const weatherResult = (weatherObject) => {
     weather.appendChild(img)
     weather.appendChild(br)
 
-
     // DESCRIPTION 
     const description = document.createElement('p')
     description.textContent =  weatherObject.weather[0].description
@@ -65,7 +63,6 @@ const weatherResult = (weatherObject) => {
     const temperature = document.createElement('p')
     temperature.textContent = `Current: ${weatherObject.main.temp}\u00B0 F`
     weather.appendChild(temperature)
-
 
     // FEELS LIKE TEMP
     const feelsLike = document.createElement('p')
